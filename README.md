@@ -6,4 +6,5 @@ This is where I keep my neovim config saved across devices.
 
 ## Install `tree-sitter-cli`
 - Install [Rust](https://rustup.rs/)
+- Install Clang/LLVM (`sudo apt-get update; sudo apt-get install clang libclang-dev llvm`)
 - Run `cargo install --locked tree-sitter-cli` ([source](https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md))
