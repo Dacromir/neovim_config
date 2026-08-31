@@ -2,3 +2,4 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 require('config.lazy_vim')
+require('config.keymaps')
