@@ -1,5 +1,6 @@
 -- Colors
 local cn_gre = "#B5CEA8" -- Constants
+local black = "#1F1F1F" -- Background charcoal
 local blue1 = "#9CDCFE" -- Variable
 local blue2 = "#4FC1FF" -- Enum
 local blue3 = "#569CD6" -- Keyword
@@ -11,6 +12,10 @@ local st_ora = "#CE9178" -- Strings
 local teal = "#4EC9B0"
 
 local function md_colors()
+    -- Backgrounds
+    vim.api.nvim_set_hl(0, "Normal", {bg=black})
+    vim.api.nvim_set_hl(0, "NormalFloat", {bg=black})
+
     -- General
     vim.api.nvim_set_hl(0, "@keyword", {fg=blue3})
     vim.api.nvim_set_hl(0, "@property", {fg=blue1})
