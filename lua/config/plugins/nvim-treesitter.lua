@@ -12,24 +12,25 @@ return {
 
     -- Automatically install these treesitters 
     require('nvim-treesitter').install({
+      'css',
+      'html',
+      'json',
+      'lua',
       'markdown',
       'markdown_inline',
-      'html',
-      'css',
-      'regex',
       'python',
-      'lua',
-      'json',
+      'regex',
+      'vimdoc',
     })
     
     vim.api.nvim_create_autocmd('FileType',{
       pattern = {
+        'css',
+        'html',
+        'json',
+        'lua',
         'markdown',
-	'html',
-	'css',
-	'python',
-	'lua',
-	'json'
+        'python',
       },
       callback = function() vim.treesitter.start() end,
   })
