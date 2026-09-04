@@ -19,6 +19,7 @@ return {
       'markdown',
       'markdown_inline',
       'python',
+      'sql',
       'regex',
       'vimdoc',
     })
@@ -31,6 +32,7 @@ return {
         'lua',
         'markdown',
         'python',
+        'sql'
       },
       callback = function() vim.treesitter.start() end,
   })
