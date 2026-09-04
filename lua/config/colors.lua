@@ -5,10 +5,10 @@ local blue2 = "#4FC1FF" -- Enum
 local blue3 = "#569CD6" -- Keyword
 local dgreen = "#6A9955" -- Comments
 local lgreen = "#B5CEA8" -- Constants
-local lgray = "#CCCCCC" -- Punctuation
 local orange = "#CE9178" -- Strings
 local purple = "#C586C0" -- Control keywords
 local teal = "#4EC9B0" -- Types
+local white = "#CCCCCC" -- Punctuation
 local yellow = "#DCDCAA" -- Functions
 
 local function md_colors()
@@ -22,7 +22,7 @@ local function md_colors()
     vim.api.nvim_set_hl(0, "@variable", {fg=blue1})
     vim.api.nvim_set_hl(0, "Comment", {fg=dgreen})
     vim.api.nvim_set_hl(0, "Constant", {fg=lgreen})
-    vim.api.nvim_set_hl(0, "Delimiter", {fg=lgray})
+    vim.api.nvim_set_hl(0, "Delimiter", {fg=white})
     vim.api.nvim_set_hl(0, "Function", {fg=yellow})
     vim.api.nvim_set_hl(0, "Statement", {fg=blue3})
     vim.api.nvim_set_hl(0, "String", {fg=orange})
@@ -31,6 +31,17 @@ local function md_colors()
     -- Lua
     vim.api.nvim_set_hl(0, "@keyword.function.lua", {fg=purple})
     vim.api.nvim_set_hl(0, "@variable.member.lua", {fg=teal})
+    
+    -- Python
+    vim.api.nvim_set_hl(0, "@boolean.python", {fg=blue3})
+    vim.api.nvim_set_hl(0, "@constant.builtin.python", {fg=blue3})
+    vim.api.nvim_set_hl(0, "@function.builtin.python", {fg=yellow})
+    vim.api.nvim_set_hl(0, "@keyword.python", {fg=purple})
+    vim.api.nvim_set_hl(0, "@keyword.import.python", {fg=purple})
+    vim.api.nvim_set_hl(0, "@keyword.return.python", {fg=purple})
+
+    -- SQL
+    vim.api.nvim_set_hl(0, "@variable.member.sql", {fg=white})
 end
 
 vim.api.nvim_create_autocmd("ColorScheme", {
