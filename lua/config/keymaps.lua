@@ -17,3 +17,8 @@ vim.keymap.set('n', '<C-k>', ':m .-2<CR>==', { desc = 'Move line up' })
 -- Move selection up and down
 vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
 vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
+
+-- Git DiffView
+vim.keymap.set("n", "<leader>dvc", function() vim.cmd("DiffviewClose") end, { desc = "Close git diffview" })
+vim.keymap.set("n", "<leader>dvo", function() vim.cmd("DiffviewOpen") end, { desc = "Open git diffview" })
+vim.keymap.set("n", "<leader>dvh", function() vim.cmd("DiffviewFileHistory") end, { desc = "Open git diffview history" })
