@@ -32,6 +32,13 @@ local function md_colors()
     vim.api.nvim_set_hl(0, "@keyword.function.lua", {fg=purple})
     vim.api.nvim_set_hl(0, "@variable.member.lua", {fg=teal})
     
+    -- Neotree
+    vim.api.nvim_set_hl(0, "NeoTreeDirectoryName", {fg="#ffffff"})
+    vim.api.nvim_set_hl(0, "NeoTreeFileName", {fg="#cccccc"})
+    vim.api.nvim_set_hl(0, "NeoTreeGitModified", {fg="#e2c08d"})
+    vim.api.nvim_set_hl(0, "NeoTreeGitUnstaged", {fg="#e2c08d"})
+    vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", {fg="#73c991"})
+
     -- Python
     vim.api.nvim_set_hl(0, "@boolean.python", {fg=blue3})
     vim.api.nvim_set_hl(0, "@constant.builtin.python", {fg=blue3})
