@@ -51,6 +51,7 @@ local function md_colors()
     vim.api.nvim_set_hl(0, "@keyword.return.python", {fg=purple})
 
     -- SQL
+    vim.api.nvim_set_hl(0, "@variable.sql", {fg=white})
     vim.api.nvim_set_hl(0, "@variable.member.sql", {fg=white})
 end
 
