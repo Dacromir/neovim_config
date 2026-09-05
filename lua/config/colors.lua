@@ -50,6 +50,15 @@ local function md_colors()
     vim.api.nvim_set_hl(0, "@keyword.import.python", {fg=purple})
     vim.api.nvim_set_hl(0, "@keyword.return.python", {fg=purple})
 
+    -- Rust
+    vim.api.nvim_set_hl(0, "@lsp.mod.controlFlow.rust", {fg=purple})
+    vim.api.nvim_set_hl(0, "@lsp.type.const.rust", {fg=blue3})
+    vim.api.nvim_set_hl(0, "@lsp.type.decorator.rust", {fg=yellow})
+    vim.api.nvim_set_hl(0, "@lsp.type.enumMember.rust", {fg=blue2})
+    vim.api.nvim_set_hl(0, "@lsp.type.macro.rust", {fg=blue3})
+    vim.api.nvim_set_hl(0, "@lsp.type.selfKeyword.rust", {fg=blue3})
+    vim.api.nvim_set_hl(0, "@lsp.typemod.derive.macro.rust", {fg=teal})
+
     -- SQL
     vim.api.nvim_set_hl(0, "@variable.sql", {fg=white})
     vim.api.nvim_set_hl(0, "@variable.member.sql", {fg=white})
