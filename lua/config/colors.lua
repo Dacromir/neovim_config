@@ -34,7 +34,7 @@ local function md_colors()
     vim.api.nvim_set_hl(0, "@keyword.function.lua", {fg=purple})
     vim.api.nvim_set_hl(0, "@keyword.return.lua", {fg=purple})
     vim.api.nvim_set_hl(0, "@variable.member.lua", {fg=teal})
-    
+
     -- Neotree
     vim.api.nvim_set_hl(0, "NeoTreeDirectoryName", {fg="#ffffff"})
     vim.api.nvim_set_hl(0, "NeoTreeFileName", {fg="#cccccc"})
