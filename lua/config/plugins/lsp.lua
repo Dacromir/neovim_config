@@ -41,11 +41,13 @@ return {
             })
 
             -- Rust
-            vim.lsp.config('rust-analyzer', {
+            vim.lsp.config('rust_analyzer', {
                 settings = {
-                    diagnostics = {
-                        disabled = {
-                            "unused_variables",
+                    ['rust-analyzer'] = {
+                        check = {
+                            ignore = {
+                                "unused_variables",
+                            },
                         },
                     },
                 },
