@@ -29,7 +29,10 @@ local function md_colors()
     vim.api.nvim_set_hl(0, "Type", {fg=teal})
 
     -- Lua
+    vim.api.nvim_set_hl(0, "@boolean.lua", {fg=blue3})
+    vim.api.nvim_set_hl(0, "@function.builtin.lua", {fg=yellow})
     vim.api.nvim_set_hl(0, "@keyword.function.lua", {fg=purple})
+    vim.api.nvim_set_hl(0, "@keyword.return.lua", {fg=purple})
     vim.api.nvim_set_hl(0, "@variable.member.lua", {fg=teal})
     
     -- Neotree
