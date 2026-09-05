@@ -11,6 +11,7 @@ return {
                 ensure_installed = { "pylsp" },
                 automatic_installation = true,
             })
+
             -- Lua
             vim.lsp.config('lua_ls', {
                 settings = {
@@ -21,6 +22,7 @@ return {
                     },
                 },
             })
+
             -- Python
             vim.lsp.config('pylsp', {
                 settings = {
@@ -33,6 +35,17 @@ return {
                                     "W292", -- Required newline at end of file
                                 },
                             },
+                        },
+                    },
+                },
+            })
+
+            -- Rust
+            vim.lsp.config('rust-analyzer', {
+                settings = {
+                    diagnostics = {
+                        disabled = {
+                            "unused_variables",
                         },
                     },
                 },
