@@ -1,6 +1,7 @@
 -- Misc
 vim.opt.number = true
 vim.opt.termguicolors = true
+vim.opt.winborder = 'single'
 
 -- Tabs
 vim.opt.expandtab = true
