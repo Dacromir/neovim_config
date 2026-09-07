@@ -18,10 +18,7 @@ return {
             'lua',
             'markdown',
             'markdown_inline',
-            'python',
             'query',
-            'regex',
-            'rust',
             'sql',
             'vimdoc',
         })
@@ -31,10 +28,7 @@ return {
                 'css',
                 'html',
                 'json',
-                'lua',
                 'markdown',
-                'python',
-                'rust',
                 'sql'
             },
             callback = function() vim.treesitter.start() end,
