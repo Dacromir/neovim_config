@@ -24,9 +24,15 @@ local function md_colors()
     vim.api.nvim_set_hl(0, "Constant", {fg=lgreen})
     vim.api.nvim_set_hl(0, "Delimiter", {fg=white})
     vim.api.nvim_set_hl(0, "Function", {fg=yellow})
+    vim.api.nvim_set_hl(0, "Identifier", {fg=blue1})
     vim.api.nvim_set_hl(0, "Statement", {fg=blue3})
     vim.api.nvim_set_hl(0, "String", {fg=orange})
     vim.api.nvim_set_hl(0, "Type", {fg=teal})
+
+    -- Delimiters
+    vim.api.nvim_set_hl(0, "RainbowDelimiterYellow", {fg="#ffd700"})
+    vim.api.nvim_set_hl(0, "RainbowDelimiterPurple", {fg="#da70d6"})
+    vim.api.nvim_set_hl(0, "RainbowDelimiterBlue", {fg="#179fff"})
 
     -- Lua
     vim.api.nvim_set_hl(0, "@boolean.lua", {fg=blue3})
