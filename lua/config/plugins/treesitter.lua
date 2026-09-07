@@ -1,41 +1,44 @@
 return {
-  'nvim-treesitter/nvim-treesitter',
-  lazy = false,
-  build = ':TSUpdate',
-  config = function()
-    require('nvim-treesitter').setup({
-      highlight = {
-        enable = true,
-	additional_vim_regex_highlighting = false,
-      },
-    })
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    build = ':TSUpdate',
+    config = function()
+        require('nvim-treesitter').setup({
+            highlight = {
+                enable = true,
+                additional_vim_regex_highlighting = false,
+            },
+        })
 
-    -- Automatically install these treesitters 
-    require('nvim-treesitter').install({
-      'css',
-      'html',
-      'json',
-      'lua',
-      'markdown',
-      'markdown_inline',
-      'python',
-      'sql',
-      'regex',
-      'vimdoc',
-    })
-    
-    vim.api.nvim_create_autocmd('FileType',{
-      pattern = {
-        'css',
-        'html',
-        'json',
-        'lua',
-        'markdown',
-        'python',
-        'sql'
-      },
-      callback = function() vim.treesitter.start() end,
-  })
+        -- Automatically install these treesitters 
+        require('nvim-treesitter').install({
+            'css',
+            'html',
+            'json',
+            'lua',
+            'markdown',
+            'markdown_inline',
+            'python',
+            'query',
+            'regex',
+            'rust',
+            'sql',
+            'vimdoc',
+        })
 
-  end
+        vim.api.nvim_create_autocmd('FileType',{
+            pattern = {
+                'css',
+                'html',
+                'json',
+                'lua',
+                'markdown',
+                'python',
+                'rust',
+                'sql'
+            },
+            callback = function() vim.treesitter.start() end,
+        })
+
+    end
 };
