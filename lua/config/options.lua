@@ -10,4 +10,5 @@ vim.opt.tabstop = 4
 
 -- Wrapping
 vim.opt.breakindent = true
+vim.opt.linebreak = true
 vim.opt.wrap = true
