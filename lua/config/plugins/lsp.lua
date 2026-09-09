@@ -30,6 +30,7 @@ return {
                         plugins = {
                             pycodestyle = {
                                 ignore = {
+                                    "E251", -- Spacing around equals sign
                                     "E302", -- Spacing around function definitions
                                     "E305", -- Spacing around `with` blocks
                                     "W292", -- Required newline at end of file
