@@ -7,6 +7,7 @@ vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagn
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Apply recommended code action" })
 vim.keymap.set("n", "<leader>en", function() vim.diagnostic.jump({count=1,float=true}) end, { desc = "Jump to next error"})
 vim.keymap.set("n", "<leader>ep", function() vim.diagnostic.jump({count=-1,float=true}) end, { desc = "Jump to prev error"})
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "LSP auto format"})
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition"})
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
 
