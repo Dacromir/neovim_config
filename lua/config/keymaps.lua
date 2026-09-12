@@ -23,3 +23,8 @@ vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 vim.keymap.set("n", "<leader>dvc", function() vim.cmd("DiffviewClose") end, { desc = "Close git diffview" })
 vim.keymap.set("n", "<leader>dvo", function() vim.cmd("DiffviewOpen") end, { desc = "Open git diffview" })
 vim.keymap.set("n", "<leader>dvh", function() vim.cmd("DiffviewFileHistory") end, { desc = "Open git diffview history" })
+
+-- Neotree
+vim.keymap.set("n", "<leader>ntf", "<cmd>Neotree reveal<cr>", { desc = "Focus on neotree window" })
+vim.keymap.set("n", "<leader>nth", "<cmd>Neotree current<cr>", { desc = "Open neotree on top of current window" })
+
