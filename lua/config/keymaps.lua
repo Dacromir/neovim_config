@@ -1,14 +1,17 @@
 -- Terminal
 vim.keymap.set("n", "<leader>t", "<cmd>botright 10split | terminal<cr>i", { desc = "Open a terminal" })
-vim.keymap.set('t', '<Esc>', "<C-\\><C-n>",{ desc = "Exit terminal mode with Esc", silent = true })
+vim.keymap.set('t', '<Esc>', "<C-\\><C-n>", { desc = "Exit terminal mode with Esc", silent = true })
 
 -- LSP
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostic popup" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Apply recommended code action" })
-vim.keymap.set("n", "<leader>en", function() vim.diagnostic.jump({count=1,float=true}) end, { desc = "Jump to next error"})
-vim.keymap.set("n", "<leader>ep", function() vim.diagnostic.jump({count=-1,float=true}) end, { desc = "Jump to prev error"})
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "LSP auto format"})
-vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition"})
+vim.keymap.set("n", "<leader>en", function() vim.diagnostic.jump({ count = 1, float = true }) end,
+    { desc = "Jump to next error" })
+vim.keymap.set("n", "<leader>ep", function() vim.diagnostic.jump({ count = -1, float = true }) end,
+    { desc = "Jump to prev error" })
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "LSP auto format" })
+vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, { desc = "List references for symbol" })
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
 
 -- Move lines up and down
@@ -27,4 +30,3 @@ vim.keymap.set("n", "<leader>dvh", function() vim.cmd("DiffviewFileHistory") end
 -- Neotree
 vim.keymap.set("n", "<leader>ntf", "<cmd>Neotree reveal<cr>", { desc = "Focus on neotree window" })
 vim.keymap.set("n", "<leader>nth", "<cmd>Neotree current<cr>", { desc = "Open neotree on top of current window" })
-
