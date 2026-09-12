@@ -47,6 +47,7 @@ return {
                     ['rust-analyzer'] = {
                         check = {
                             ignore = {
+                                "inactive_code",
                                 "unused_variables",
                             },
                         },
