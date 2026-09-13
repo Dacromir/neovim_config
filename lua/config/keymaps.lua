@@ -9,7 +9,7 @@ vim.keymap.set("n", "<leader>en", function() vim.diagnostic.jump({ count = 1, fl
     { desc = "Jump to next error" })
 vim.keymap.set("n", "<leader>ep", function() vim.diagnostic.jump({ count = -1, float = true }) end,
     { desc = "Jump to prev error" })
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "LSP auto format" })
+vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, { desc = "LSP auto format" })
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, { desc = "List references for symbol" })
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
@@ -30,3 +30,8 @@ vim.keymap.set("n", "<leader>dvh", function() vim.cmd("DiffviewFileHistory") end
 -- Neotree
 vim.keymap.set("n", "<leader>ntf", "<cmd>Neotree reveal<cr>", { desc = "Focus on neotree window" })
 vim.keymap.set("n", "<leader>nth", "<cmd>Neotree current<cr>", { desc = "Open neotree on top of current window" })
+
+-- Telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>fn', builtin.find_files, { desc = 'Telescope find file name' })
+vim.keymap.set('n', '<leader>fc', builtin.live_grep, { desc = 'Telescope find file contents (live grep)' })
