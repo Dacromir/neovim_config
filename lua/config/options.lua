@@ -1,7 +1,8 @@
 -- Misc
 vim.opt.number = true
 vim.opt.termguicolors = true
-vim.opt.winborder = 'single'
+vim.opt.winborder = 'single' -- Adds a border around pop-up windows
+vim.opt.ignorecase = true -- Ignore case while searching buffer
 
 -- Tabs
 vim.opt.expandtab = true
