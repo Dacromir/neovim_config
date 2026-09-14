@@ -3,7 +3,7 @@ vim.keymap.set("n", "<leader>t", "<cmd>botright 10split | terminal<cr>i", { desc
 vim.keymap.set('t', '<Esc>', "<C-\\><C-n>", { desc = "Exit terminal mode with Esc", silent = true })
 
 -- LSP
-vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostic popup" })
+vim.keymap.set("n", "<leader>di", vim.diagnostic.open_float, { desc = "Show diagnostic popup" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Apply recommended code action" })
 vim.keymap.set("n", "<leader>en", function() vim.diagnostic.jump({ count = 1, float = true }) end,
     { desc = "Jump to next error" })
@@ -26,6 +26,8 @@ vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 vim.keymap.set("n", "<leader>dvc", function() vim.cmd("DiffviewClose") end, { desc = "Close git diffview" })
 vim.keymap.set("n", "<leader>dvo", function() vim.cmd("DiffviewOpen") end, { desc = "Open git diffview" })
 vim.keymap.set("n", "<leader>dvh", function() vim.cmd("DiffviewFileHistory") end, { desc = "Open git diffview history" })
+
+-- GitSigns keymaps managed in GitSigns config
 
 -- Neotree
 vim.keymap.set("n", "<leader>ntf", "<cmd>Neotree reveal<cr>", { desc = "Focus on neotree window" })
