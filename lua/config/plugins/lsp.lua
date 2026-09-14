@@ -48,7 +48,7 @@ return {
                         check = {
                             ignore = {
                                 "inactive_code",
-                                "unused_variables",
+                                -- "unused_variables",
                             },
                         },
                     },
