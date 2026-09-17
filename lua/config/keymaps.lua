@@ -35,6 +35,7 @@ vim.keymap.set("n", "<leader>nth", "<cmd>Neotree current<cr>", { desc = "Open ne
 
 -- Telescope
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find, { desc = 'Telescope search contents of current file (live grep)' })
-vim.keymap.set('n', '<leader>fc', builtin.live_grep, { desc = 'Telescope find file contents (live grep)' })
+vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find, { desc = 'Telescope search current buffer' })
+vim.keymap.set('n', '<leader>fc', builtin.live_grep, { desc = 'Telescope search file contents' })
+vim.keymap.set('n', '<leader>fhc', function() builtin.live_grep({hidden = true, no_ignore=true}) end, { desc = 'Telescope search all file contents, including hidden files' })
 vim.keymap.set('n', '<leader>fn', builtin.find_files, { desc = 'Telescope find file name' })
