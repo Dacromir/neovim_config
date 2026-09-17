@@ -1,13 +1,18 @@
 #!/bin/bash
-# Install latest version of neovim
+### Install neovim ###
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
+sudo apt install neovim 
 
-# Install Dependencies
-sudo apt install neovim clang libclang-dev llvm python3-full ripgrep fd-find
+### Install Dependencies ###
+# Treesitter
+sudo apt install clang libclang-dev llvm
+# Python LSPs
+sudo apt install python3-full
+# Telescope
+sudo apt install ripgrep fd-find
 
-# Install Rust
+### Install command-line tools ###
+# Treesitter CLI
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# Install Tree Sitter
 cargo install --locked tree-sitter-cli
