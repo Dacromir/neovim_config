@@ -1,0 +1,16 @@
+*dbt.txt* Common DBT commands               *dbt*
+
+Run model:
+>dbt run --select modelname
+
+Run model downstream:
+>dbt run --select modelname+
+
+Run model upstream:
+>dbt run --select +modelname
+
+Run model upstream and downstream:
+>dbt run --select +modelname+
+
+Run model, downstream models, and upstream of any downstream models:
+>dbt run --select @modelname
