@@ -46,9 +46,15 @@ return {
                 settings = {
                     ['rust-analyzer'] = {
                         check = {
+                            command = "clippy",
                             ignore = {
                                 "inactive_code",
                                 -- "unused_variables",
+                            },
+                        },
+                        diagnostics = {
+                            disabled = {
+                                "inactive_code",
                             },
                         },
                     },
