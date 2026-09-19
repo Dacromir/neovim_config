@@ -24,8 +24,28 @@ vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 
 -- Git DiffView
 vim.keymap.set("n", "<leader>dvc", function() vim.cmd("DiffviewClose") end, { desc = "Close git diffview" })
-vim.keymap.set("n", "<leader>dvo", function() vim.cmd("DiffviewOpen") end, { desc = "Open git diffview" })
-vim.keymap.set("n", "<leader>dvh", function() vim.cmd("DiffviewFileHistory") end, { desc = "Open git diffview history" })
+vim.keymap.set(
+    "n",
+    "<leader>dvm",
+    function()
+        vim.cmd({ cmd = "DiffviewOpen", args = { "main..." } })
+        vim.cmd("wincmd l")
+        vim.cmd("wincmd L")
+        vim.cmd("wincmd h")
+    end,
+    { desc = "Open git diffview vs main" }
+)
+vim.keymap.set(
+    "n",
+    "<leader>dvo",
+    function()
+        vim.cmd("DiffviewOpen")
+        vim.cmd("wincmd l")
+        vim.cmd("wincmd L")
+        vim.cmd("wincmd h")
+    end,
+    { desc = "Open git diffview" }
+)
 
 -- GitSigns keymaps managed in GitSigns config
 
@@ -37,5 +57,6 @@ vim.keymap.set("n", "<leader>nth", "<cmd>Neotree current<cr>", { desc = "Open ne
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find, { desc = 'Telescope search current buffer' })
 vim.keymap.set('n', '<leader>fc', builtin.live_grep, { desc = 'Telescope search file contents' })
-vim.keymap.set('n', '<leader>fhc', function() builtin.live_grep({hidden = true, no_ignore=true}) end, { desc = 'Telescope search all file contents, including hidden files' })
+vim.keymap.set('n', '<leader>fhc', function() builtin.live_grep({ hidden = true, no_ignore = true }) end,
+    { desc = 'Telescope search all file contents, including hidden files' })
 vim.keymap.set('n', '<leader>fn', builtin.find_files, { desc = 'Telescope find file name' })
