@@ -17,7 +17,12 @@ return {
                 settings = {
                     Lua = {
                         diagnostics = {
-                            globals = { "vim" },
+                            disable = {
+                                "unused-local"
+                            },
+                            globals = {
+                                "vim"
+                            },
                         },
                     },
                 },
