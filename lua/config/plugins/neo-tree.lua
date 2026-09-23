@@ -16,7 +16,7 @@ return {
                     folder_empty_open = "󰷏",
                     selected = "󰐾",
                     use_filtered_colors = true,
-                    default = " ",
+                    default = "-",
                     highlight = "NeoTreeFileIcon",
                     provider = function(icon, node, state) end,
                 },
