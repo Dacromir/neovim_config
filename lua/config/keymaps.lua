@@ -50,8 +50,10 @@ vim.keymap.set(
 -- GitSigns keymaps managed in GitSigns config
 
 -- Neotree
-vim.keymap.set("n", "<leader>ntf", "<cmd>Neotree reveal<cr>", { desc = "Focus on neotree window" })
-vim.keymap.set("n", "<leader>nth", "<cmd>Neotree current<cr>", { desc = "Open neotree on top of current window" })
+vim.keymap.set("n", "<leader>nb", "<cmd>Neotree focus buffers<cr>", { desc = "Open neotree buffer list" })
+vim.keymap.set("n", "<leader>nf", "<cmd>Neotree reveal<cr>", { desc = "Open neotree file list" })
+vim.keymap.set("n", "<leader>ng", "<cmd>Neotree focus git_status<cr>", { desc = "Open neotree git status" })
+vim.keymap.set("n", "<leader>no", "<cmd>Neotree current<cr>", { desc = "Open neotree on top of current window" })
 
 -- Telescope
 local builtin = require('telescope.builtin')
