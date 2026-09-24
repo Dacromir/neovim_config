@@ -1,7 +1,3 @@
--- Terminal
-vim.keymap.set("n", "<leader>t", "<cmd>botright 10split | terminal<cr>i", { desc = "Open a terminal" })
-vim.keymap.set('t', '<Esc>', "<C-\\><C-n>", { desc = "Exit terminal mode with Esc", silent = true })
-
 -- LSP
 vim.keymap.set("n", "<leader>di", vim.diagnostic.open_float, { desc = "Show diagnostic popup" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Apply recommended code action" })
@@ -62,3 +58,31 @@ vim.keymap.set('n', '<leader>fc', builtin.live_grep, { desc = 'Telescope search 
 vim.keymap.set('n', '<leader>fhc', function() builtin.live_grep({ hidden = true, no_ignore = true }) end,
     { desc = 'Telescope search all file contents, including hidden files' })
 vim.keymap.set('n', '<leader>fn', builtin.find_files, { desc = 'Telescope find file name' })
+
+-- Terminal
+vim.api.nvim_create_user_command('OpenTerminal', function()
+    -- Check if a terminal buffer already exists
+    local term_buf = nil
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+        if vim.bo[buf].buftype == 'terminal' then
+            term_buf = buf
+            break
+        end
+    end
+
+    -- If a terminal was found, open it in a split
+    if term_buf then
+        local win = vim.fn.bufwinid(term_buf)
+        if win == -1 then -- If it exists but isn't visible, open it in a split (or use :b to switch)
+            vim.cmd('botright 10split | buffer ' .. term_buf)
+        else              -- If it exists and is visible, focus on it
+            vim.api.nvim_set_current_win(win)
+        end
+    else -- Otherwise, open a new terminal
+        vim.cmd('botright 10split | terminal')
+    end
+end, {})
+
+vim.keymap.set("n", "<leader>t", "<cmd>OpenTerminal<cr>i", { desc = "Open a terminal" })
+vim.keymap.set("n", "<leader>T", "<cmd>botright 10split | terminal<cr>i", { desc = "Open a new terminal" })
+vim.keymap.set('t', '<Esc>', "<C-\\><C-n>", { desc = "Exit terminal mode with Esc", silent = true })
