@@ -26,8 +26,7 @@ vim.keymap.set(
     function()
         vim.cmd({ cmd = "DiffviewOpen", args = { "main..." } })
         vim.cmd("wincmd l")
-        vim.cmd("wincmd L")
-        vim.cmd("wincmd h")
+        vim.cmd("wincmd l")
     end,
     { desc = "Open git diffview vs main" }
 )
@@ -37,8 +36,7 @@ vim.keymap.set(
     function()
         vim.cmd("DiffviewOpen")
         vim.cmd("wincmd l")
-        vim.cmd("wincmd L")
-        vim.cmd("wincmd h")
+        vim.cmd("wincmd l")
     end,
     { desc = "Open git diffview" }
 )
@@ -62,19 +60,19 @@ vim.keymap.set('n', '<leader>fn', builtin.find_files, { desc = 'Telescope find f
 -- Terminal
 vim.api.nvim_create_user_command('OpenTerminal', function()
     -- Check if a terminal buffer already exists
-    local term_buf = nil
-    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-        if vim.bo[buf].buftype == 'terminal' then
-            term_buf = buf
+    local term_buffer = nil
+    for _, buffer_id in ipairs(vim.api.nvim_list_bufs()) do
+        if vim.bo[buffer_id].buftype == 'terminal' then
+            term_buffer = buffer_id
             break
         end
     end
 
     -- If a terminal was found, open it in a split
-    if term_buf then
-        local win = vim.fn.bufwinid(term_buf)
+    if term_buffer then
+        local win = vim.fn.bufwinid(term_buffer)
         if win == -1 then -- If it exists but isn't visible, open it in a split (or use :b to switch)
-            vim.cmd('botright 10split | buffer ' .. term_buf)
+            vim.cmd('botright 10split | buffer ' .. term_buffer)
         else              -- If it exists and is visible, focus on it
             vim.api.nvim_set_current_win(win)
         end
@@ -86,3 +84,17 @@ end, {})
 vim.keymap.set("n", "<leader>t", "<cmd>OpenTerminal<cr>i", { desc = "Open a terminal" })
 vim.keymap.set("n", "<leader>T", "<cmd>botright 10split | terminal<cr>i", { desc = "Open a new terminal" })
 vim.keymap.set('t', '<Esc>', "<C-\\><C-n>", { desc = "Exit terminal mode with Esc", silent = true })
+
+-- Buffer management
+vim.api.nvim_create_user_command('ClearBuffers', function()
+    -- Loop through all open buffers
+    for _, buffer_id in ipairs(vim.api.nvim_list_bufs()) do
+        local window_id = vim.fn.bufwinid(buffer_id)
+        -- Delete the buffer if it's not currently visible
+        if window_id == -1 then
+            pcall(function() vim.api.nvim_buf_delete(buffer_id, {}) end)
+        end
+    end
+end, {})
+
+vim.keymap.set("n", "<leader>cb", "<cmd>ClearBuffers<cr>", { desc = "Delete all background buffers" })
