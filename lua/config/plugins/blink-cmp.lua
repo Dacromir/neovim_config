@@ -1,7 +1,7 @@
 return {
     'saghen/blink.cmp',
     -- optional: provides snippets for the snippet source
-    dependencies = { 'rafamadriz/friendly-snippets' },
+    dependencies = { 'L3MON4D3/LuaSnip' },
 
     -- use a release tag to download pre-built binaries
     version = '1.*',
@@ -27,8 +27,8 @@ return {
         -- See :h blink-cmp-config-keymap for defining your own keymap
         keymap = {
             preset = 'super-tab',
-            ['<C-j>'] = { 'select_next', 'fallback'},
-            ['<C-k>'] = { 'select_prev', 'fallback'},
+            ['<C-j>'] = { 'select_next', 'fallback' },
+            ['<C-k>'] = { 'select_prev', 'fallback' },
         },
 
         appearance = {
@@ -51,7 +51,12 @@ return {
         -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
         --
         -- See the fuzzy documentation for more information
-        fuzzy = { implementation = "prefer_rust_with_warning" }
+        fuzzy = { implementation = "prefer_rust_with_warning" },
+
+        -- Use LuaSnip not friendly
+        snippets = {
+            preset = "luasnip"
+        },
     },
     opts_extend = { "sources.default" }
 };
