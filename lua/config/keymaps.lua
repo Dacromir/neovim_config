@@ -96,5 +96,23 @@ vim.api.nvim_create_user_command('ClearBuffers', function()
         end
     end
 end, {})
-
 vim.keymap.set("n", "<leader>cb", "<cmd>ClearBuffers<cr>", { desc = "Delete all background buffers" })
+
+-- Skipping over closing brackets/prentheses/etc
+local function skip_char(char)
+    local line = vim.api.nvim_get_current_line()
+    local col = vim.api.nvim_win_get_cursor(0)[2]
+    local char_under_cursor = line:sub(col + 1, col + 1)
+
+    if char_under_cursor == char then
+        return '<Right>'
+    else
+        return char
+    end
+end
+vim.keymap.set('i', ')', function() return skip_char(')') end, { expr = true, noremap = true, silent = true })
+vim.keymap.set('i', ']', function() return skip_char(']') end, { expr = true, noremap = true, silent = true })
+vim.keymap.set('i', '}', function() return skip_char('}') end, { expr = true, noremap = true, silent = true })
+vim.keymap.set('i', '>', function() return skip_char('>') end, { expr = true, noremap = true, silent = true })
+vim.keymap.set('i', '"', function() return skip_char('"') end, { expr = true, noremap = true, silent = true })
+vim.keymap.set('i', "'", function() return skip_char("'") end, { expr = true, noremap = true, silent = true })
