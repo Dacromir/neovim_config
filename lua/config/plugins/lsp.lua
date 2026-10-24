@@ -8,7 +8,10 @@ return {
         config = function()
             require("mason").setup()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "pylsp" },
+                ensure_installed = {
+                    "biome",  -- JSON
+                    "lua_ls", -- Lua
+                },
                 automatic_installation = true,
             })
 

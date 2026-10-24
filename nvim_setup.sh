@@ -11,8 +11,11 @@ sudo apt install clang libclang-dev llvm
 sudo apt install python3-full
 # Telescope
 sudo apt install ripgrep fd-find
+# Biome (JSON LSP)
+sudo apt install nodejs npm
 
 ### Install command-line tools ###
-# Treesitter CLI
+# Install Rust (used for treesitter CLI)
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# Treesitter CLI
 cargo install --locked tree-sitter-cli
