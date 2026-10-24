@@ -48,6 +48,9 @@ vim.keymap.set("n", "<leader>nb", "<cmd>Neotree focus buffers<cr>", { desc = "Op
 vim.keymap.set("n", "<leader>nf", "<cmd>Neotree reveal<cr>", { desc = "Open neotree file list" })
 vim.keymap.set("n", "<leader>ng", "<cmd>Neotree focus git_status<cr>", { desc = "Open neotree git status" })
 vim.keymap.set("n", "<leader>no", "<cmd>Neotree current<cr>", { desc = "Open neotree on top of current window" })
+-- Remove `-` keybind (causes neotree bug, not desired with neotree setup)
+vim.keymap.del("n", "-")
+
 
 -- Telescope
 local builtin = require('telescope.builtin')
